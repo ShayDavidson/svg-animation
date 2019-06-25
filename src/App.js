@@ -1,4 +1,9 @@
-import React, { useLayoutEffect, useCallback, useState } from 'react';
+import React, {
+  useLayoutEffect,
+  useCallback,
+  useState,
+  useEffect,
+} from 'react';
 import './App.css';
 
 function useRequestAnimationFrame(externalStepFunction, deps) {
@@ -16,6 +21,31 @@ function useRequestAnimationFrame(externalStepFunction, deps) {
     internalStepFunction();
     return () => cancelAnimationFrame(animationFrame);
   }, [deps, externalStepFunction]);
+}
+
+function getPageScroll() {
+  const absoluteScroll = window.scrollY;
+  const contentHeight = document.documentElement.scrollHeight;
+  const relativeScroll = absoluteScroll / (contentHeight - window.innerHeight);
+  return {
+    absoluteScroll,
+    relativeScroll: isNaN(relativeScroll) ? 0 : relativeScroll,
+  };
+}
+
+function usePageScroll() {
+  const [{ absoluteScroll, relativeScroll }, setState] = useState(
+    getPageScroll()
+  );
+  useEffect(() => {
+    const handler = () => {
+      setState(getPageScroll());
+    };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  });
+
+  return { absoluteScroll, relativeScroll };
 }
 
 const LARGE_ENOUGH_GAP = 1000000;
@@ -47,6 +77,8 @@ function App() {
   }, []);
 
   useRequestAnimationFrame(step);
+
+  const { absoluteScroll, relativeScroll } = usePageScroll();
 
   return (
     <div className="App">
