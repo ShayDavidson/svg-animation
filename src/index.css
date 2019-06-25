@@ -1,13 +1,70 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@keyframes dash {
+  25% {
+    stroke-dashoffset: -5000;
+    stroke-dasharray: 3000, 10000000;
+  }
+  35% {
+    stroke-dashoffset: -5000;
+    stroke-dasharray: 200, 10000000;
+  }
+  100% {
+    stroke-dashoffset: -30000;
+    stroke-dasharray: 20, 10000000;
+  }
+}
+
+@keyframes dash-point {
+  25% {
+    stroke-dashoffset: -5000;
+  }
+  35% {
+    stroke-dashoffset: -5000;
+    stroke-dasharray: 3, 10000000;
+  }
+  100% {
+    stroke-dashoffset: -30000;
+    stroke-dasharray: 3, 10000000;
+  }
+}
+
+.background-path {
+  fill: none;
+  stroke: #ececec;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+
+.foreground-path {
+  fill: none;
+  stroke: black;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 200, 10000000;
+  animation: dash 20s both;
+}
+
+.point-path {
+  fill: none;
+  stroke: #ff0083;
+  stroke-miterlimit: 10;
+  stroke-width: 10px;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  stroke-dasharray: 2, 10000000;
+  animation: dash-point 20s both;
 }
