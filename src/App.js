@@ -136,7 +136,9 @@ function App() {
   // useRequestAnimationFrame(step);
 
   const { relativeScroll } = usePageScroll();
-  const index = MAP.findIndex(({ scroll }) => relativeScroll < scroll);
+  const index = MAP.findIndex(
+    ({ scroll }) => Math.min(1, Math.max(0, relativeScroll)) < scroll
+  );
   const fromBucket = MAP[index - 1];
   const toBucket = MAP[index];
   const relativeScrollInBucket = inverseLerp(
@@ -144,7 +146,6 @@ function App() {
     toBucket.scroll,
     relativeScroll
   );
-  console.log(relativeScroll);
 
   const size = lerp(fromBucket.size, toBucket.size, relativeScrollInBucket);
   const offset = lerp(
