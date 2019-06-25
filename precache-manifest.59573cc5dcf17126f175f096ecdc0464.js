@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20f2800eca44d493c307d8882118dc27",
+    "revision": "811c8fa432d8828a5455b9a98712641b",
     "url": "/svg-animation/index.html"
   },
   {
-    "revision": "dd03716c5b1906c2d667",
+    "revision": "15c0b006b8d53da2b405",
     "url": "/svg-animation/static/css/main.776b5add.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/svg-animation/static/js/2.a420ee9b.chunk.js"
   },
   {
-    "revision": "dd03716c5b1906c2d667",
-    "url": "/svg-animation/static/js/main.fc53a4cc.chunk.js"
+    "revision": "15c0b006b8d53da2b405",
+    "url": "/svg-animation/static/js/main.8ec1bb71.chunk.js"
   },
   {
     "revision": "c4d56afa7409fd3ef4e8",
