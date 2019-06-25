@@ -3,12 +3,14 @@ import './App.css';
 
 function useRequestAnimationFrame(externalStepFunction, deps) {
   useLayoutEffect(() => {
-    const startTime = new Date();
+    let lastTime = new Date();
     let animationFrame;
     const internalStepFunction = () => {
       animationFrame = window.requestAnimationFrame(() => {
-        externalStepFunction(new Date() - startTime);
-        internalStepFunction();
+        const newTime = new Date();
+        const dt = externalStepFunction(newTime - lastTime);
+        lastTime = newTime;
+        internalStepFunction(dt);
       });
     };
     internalStepFunction();
@@ -40,7 +42,7 @@ function App() {
 
   const step = useCallback(dt => {
     setState(({ size, offset }) => {
-      return { size, offset: offset + 1 };
+      return { size, offset: offset + dt };
     });
   }, []);
 
