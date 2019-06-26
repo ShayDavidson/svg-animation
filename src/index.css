@@ -7,18 +7,23 @@ body {
   box-sizing: border-box;
 }
 
+svg {
+  height: 100%;
+  width: 100%;
+}
+
 .background-path {
   fill: none;
   stroke: #ececec;
   stroke-miterlimit: 10;
-  stroke-width: 3px;
+  stroke-width: 4px;
 }
 
 .foreground-path {
   fill: none;
   stroke: black;
   stroke-miterlimit: 10;
-  stroke-width: 3px;
+  stroke-width: 4px;
 }
 
 .point-path {
