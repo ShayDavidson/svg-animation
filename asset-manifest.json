@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/svg-animation/static/css/main.776b5add.chunk.css",
-    "main.js": "/svg-animation/static/js/main.8ec1bb71.chunk.js",
-    "main.js.map": "/svg-animation/static/js/main.8ec1bb71.chunk.js.map",
+    "main.css": "/svg-animation/static/css/main.e8947cb4.chunk.css",
+    "main.js": "/svg-animation/static/js/main.b8311929.chunk.js",
+    "main.js.map": "/svg-animation/static/js/main.b8311929.chunk.js.map",
     "runtime~main.js": "/svg-animation/static/js/runtime~main.83639b2b.js",
     "runtime~main.js.map": "/svg-animation/static/js/runtime~main.83639b2b.js.map",
     "static/js/2.a420ee9b.chunk.js": "/svg-animation/static/js/2.a420ee9b.chunk.js",
     "static/js/2.a420ee9b.chunk.js.map": "/svg-animation/static/js/2.a420ee9b.chunk.js.map",
     "index.html": "/svg-animation/index.html",
-    "precache-manifest.59573cc5dcf17126f175f096ecdc0464.js": "/svg-animation/precache-manifest.59573cc5dcf17126f175f096ecdc0464.js",
+    "precache-manifest.ee05b1be0b55c5b7baff8ca8757e8d13.js": "/svg-animation/precache-manifest.ee05b1be0b55c5b7baff8ca8757e8d13.js",
     "service-worker.js": "/svg-animation/service-worker.js",
-    "static/css/main.776b5add.chunk.css.map": "/svg-animation/static/css/main.776b5add.chunk.css.map"
+    "static/css/main.e8947cb4.chunk.css.map": "/svg-animation/static/css/main.e8947cb4.chunk.css.map"
   }
 }
