@@ -170,8 +170,7 @@ function App() {
         <SVGSegment
           className="point-path"
           d={path}
-          filter="url(#f1)"
-          size={2}
+          size={1}
           offset={size + offset}
         />
       </svg>

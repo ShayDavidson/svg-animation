@@ -24,7 +24,6 @@ body {
 .point-path {
   fill: none;
   stroke: #ff0083;
-  stroke-miterlimit: 10;
-  stroke-width: 10px;
+  stroke-width: 15px;
   stroke-linecap: round;
 }
