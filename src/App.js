@@ -96,19 +96,34 @@ const MAP = [
     offset: 15000,
   },
   {
-    scroll: 0.7,
-    size: 500,
-    offset: 17000,
+    scroll: 0.68,
+    size: 1000,
+    offset: 16000,
   },
   {
-    scroll: 0.8,
-    size: 5000,
+    scroll: 0.75,
+    size: 1000,
     offset: 18000,
   },
   {
-    scroll: 0.99,
+    scroll: 0.8,
+    size: 500,
+    offset: 19000,
+  },
+  {
+    scroll: 0.82,
     size: 1000,
-    offset: 30000,
+    offset: 20000,
+  },
+  {
+    scroll: 0.95,
+    size: 1000,
+    offset: 25000,
+  },
+  {
+    scroll: 0.97,
+    size: 500,
+    offset: 26000,
   },
   {
     scroll: 1 + Number.EPSILON,
@@ -154,6 +169,8 @@ function App() {
     relativeScrollInBucket
   );
 
+  console.log(relativeScroll);
+
   return (
     <div className="App">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox}>
@@ -167,12 +184,14 @@ function App() {
           size={size}
           offset={offset}
         />
-        <SVGSegment
-          className="point-path"
-          d={path}
-          size={1}
-          offset={size + offset}
-        />
+        {relativeScroll < 1 && (
+          <SVGSegment
+            className="point-path"
+            d={path}
+            size={1}
+            offset={size + offset}
+          />
+        )}
       </svg>
     </div>
   );
